@@ -46,8 +46,6 @@ tseriesc_similarity.out <- tseriesclust_similarity(pollutant,locations,maxiter=5
                                                    frequency = 365,seasonfreq = 4,seasondelay = 79)
 toc()
 
-# load("results.RData")
-
 library(leaflegend)
 library(htmlwidgets)
 library(mcclust.ext)
