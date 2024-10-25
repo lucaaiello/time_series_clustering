@@ -1,7 +1,5 @@
 rm(list = ls())
 
-setwd("C:/Dati/Dottorato/Aiello_Argiento_Legramanti_Paci/code")
-
 pollutant_all <- read.csv("data/timeSeriesData.csv") 
 pollutant <- pollutant_all[2191:2290,]
 
