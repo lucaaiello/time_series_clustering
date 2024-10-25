@@ -10,21 +10,19 @@ library(shiny)
 library(shinythemes)
 library(leaflet)
 
-setwd("C:/Dati/Dottorato/Aiello_Argiento_Legramanti_Paci")
-
 # MCMC algorithm
-source("code/tseriesclust_similarity.R")
+source("tseriesclust_similarity.R")
 # Auxiliary functions necessary for the algorithm
-source("code/auxiliary_functions/scaleandperiods.R")
-source("code/auxiliary_functions/designmatrices.R")
-source("code/auxiliary_functions/comp11.R")
-source("code/auxiliary_functions/similarity.R")
+source("auxiliary_functions/scaleandperiods.R")
+source("auxiliary_functions/designmatrices.R")
+source("auxiliary_functions/comp11.R")
+source("auxiliary_functions/similarity.R")
 
 # Time series data
-pollutant <- read.csv('code/data/timeSeriesData.csv') 
+pollutant <- read.csv('data/timeSeriesData.csv') 
 pollutant <- pollutant[2191:2290,]
 
-stationInfo <- read.csv('code/data/stationsInfo.csv')
+stationInfo <- read.csv('data/stationsInfo.csv')
 ##get latitude and longitude
 latitude <- c()
 longitude <- c()
@@ -41,7 +39,6 @@ map("world",add=T)
 
 library(tictoc)
 
-# 43896.79 seconds
 tic()
 pb=progress_bar$new(total=5000)
 invisible(pb$tick(0))
@@ -49,7 +46,7 @@ tseriesc_similarity.out <- tseriesclust_similarity(pollutant,locations,maxiter=5
                                                    frequency = 365,seasonfreq = 4,seasondelay = 79)
 toc()
 
-load("C:/Dati/Dottorato/Aiello_Argiento_Legramanti_Paci/code/results/result_fix_similarity_25_10_24.RData")
+# load("results.RData")
 
 library(leaflegend)
 library(htmlwidgets)
