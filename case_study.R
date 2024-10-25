@@ -43,7 +43,7 @@ tic()
 pb=progress_bar$new(total=5000)
 invisible(pb$tick(0))
 tseriesc_similarity.out <- tseriesclust_similarity(pollutant,locations,maxiter=5000,burnin=2000,thinning=1,
-                                                   frequency = 365,seasonfreq = 4,seasondelay = 79)
+                                                   deg=0,frequency=365,seasonfreq=2,seasondelay=59)
 toc()
 
 library(leaflegend)
