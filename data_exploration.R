@@ -107,7 +107,7 @@ locations_arima <- locations[-c(54,64),]
 
 # Construction of the design matrix, the same used in  the final model 
 source("auxiliary_functions/designmatrices.R")
-DM <- designmatrices(deg = 0, 100, frequency = 365, seasonfreq = 2, seasondelay = 59)     
+DM <- designmatrices(deg = 2, 100, frequency = 365, seasonfreq = 2, seasondelay = 79)     
 Z <- DM$Z
 
 b0 <- c()
