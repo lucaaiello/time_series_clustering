@@ -129,8 +129,8 @@ leaflet(data = locations.clust, options = list(zoomControl = FALSE,attributionCo
   addCircleMarkers(lng = ~lon, lat = ~lat, radius = 9, stroke = FALSE,
                    fillColor = ~pal(gamma), fillOpacity = 0.9) %>%
   addLegendFactor(pal = pal, values = ~factor(gamma),
-                  opacity = 0.9, shape = 'circle', # title = HTML("<span style='font-size: 24px;'>&gamma;</span>"),  #HTML("&gamma;"), 
-                  title = HTML("<span style='font-size: 30px; font-family: Times New Roman, serif;'>γ</span>"),
+                  opacity = 0.9, shape = 'circle', 
+                  title = HTML("<span style='font-size: 30px;'>&theta;</span>"),
                   position ="topleft", width = 20, height = 20,
                   labelStyle = 'font-size: 20px;')
 
